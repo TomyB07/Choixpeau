@@ -1,4 +1,3 @@
-
 // Notre variable qui contient le "module" app (un objet)
 let app = {
     // Tableau contenant le nom des 4 maisons
@@ -9,10 +8,29 @@ let app = {
         'maxopus'
     ],
     // Méthode appelée au chargement de la page
-    init: function() {
-     
+
+
+    init: function () {
+        console.log('init');
+        let form = document.querySelector('form');
+        form.addEventListener("submit", app.handlerVerif);
+
+    },
+
+    handlerVerif: function (evt){
+        evt.preventDefault();
+        let elementCourant = document.querySelector('.name').value;
+        let divChange = document.querySelector('.speech');
+
+        if (elementCourant != ""){
+            console.log(elementCourant);
+            divChange.appendChild()
+        }
+
+
     }
 }
+
 
 // Quand la page est entièrement chargée, on exécute la méthode init située dans l'object app.
 document.addEventListener('DOMContentLoaded', app.init);
