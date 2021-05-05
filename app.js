@@ -17,14 +17,31 @@ let app = {
 
     },
 
-    handlerVerif: function (evt){
+    handlerVerif: function (evt) {
         evt.preventDefault();
         let elementCourant = document.querySelector('.name').value;
         let divChange = document.querySelector('.speech');
 
-        if (elementCourant != ""){
+        if (elementCourant != "") {
             console.log(elementCourant);
-            divChange.appendChild()
+            let randomNumber = (Math.random());
+            console.log(randomNumber);
+            if (randomNumber < 0.25) {
+                let ajoutImage = '<img src="images/anthorvus.png" alt="choixpo">';
+                document.querySelector('.speech').innerHTML = ajoutImage;
+            }
+            else if (randomNumber < 0.5) {
+                let ajoutImage = '<img src="images/darioptera.png" alt="choixpo">';
+                document.querySelector('.speech').innerHTML = ajoutImage;
+            }
+            else if (randomNumber < 0.75) {
+                let ajoutImage = '<img src="images/lustrix.png" alt="choixpo">';
+                document.querySelector('.speech').innerHTML = ajoutImage;
+            }else if (randomNumber < 1) {
+                let ajoutImage = '<img src="images/maxopus.png" alt="choixpo">';
+                document.querySelector('.speech').innerHTML = ajoutImage;
+            }
+
         }
 
 
