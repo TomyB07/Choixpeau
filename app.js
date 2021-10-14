@@ -11,10 +11,8 @@ let app = {
 
 
     init: function () {
-        console.log('init');
         let form = document.querySelector('form');
         form.addEventListener("submit", app.handlerVerif);
-
     },
 
     handlerVerif: function (evt) {
@@ -23,39 +21,35 @@ let app = {
         let divChange = document.querySelector('.speech');
 
         if (elementCourant != "") {
-            let nameLength = elementCourant.length
-            console.log(nameLength)
-
+            
             if (elementCourant.length === 8) {
-                let ajoutImage = '<img src="images/maxopus.png" alt="choixpo">';
-                divChange.innerHTML = ajoutImage;
+                let newImage = '<img src="images/maxopus.png" alt="choixpo">';
+                divChange.innerHTML = newImage;
             } 
             
             else if (elementCourant[0] === "L" || elementCourant[0] === "l") {
-                let ajoutImage = '<img src="images/lustrix.png" alt="choixpo">';
-                document.querySelector('.speech').innerHTML = ajoutImage;
+                let newImage = '<img src="images/lustrix.png" alt="choixpo">';
+                divChange.innerHTML = newImage;
             } else if (elementCourant.charAt(elementCourant.length - 1) === "X" || elementCourant.charAt(elementCourant.length - 1) === "x") {
-                let ajoutImage = '<img src="images/lustrix.png" alt="choixpo">';
-                document.querySelector('.speech').innerHTML = ajoutImage;
+                let newImage = '<img src="images/lustrix.png" alt="choixpo">';
+                divChange.innerHTML = newImage;
             } 
             
             else if (Number.isInteger(elementCourant.length / 5)) {
-                let ajoutImage = '<img src="images/anthorvus.png" alt="choixpo">';
-                document.querySelector('.speech').innerHTML = ajoutImage;
+                let newImage = '<img src="images/anthorvus.png" alt="choixpo">';
+                divChange.innerHTML = newImage;
             } else if (Number.isInteger(elementCourant.length / 3)) {
-                let ajoutImage = '<img src="images/anthorvus.png" alt="choixpo">';
-                document.querySelector('.speech').innerHTML = ajoutImage;
+                let newImage = '<img src="images/anthorvus.png" alt="choixpo">';
+                divChange.innerHTML = newImage;
             } 
             
             else {
-                let ajoutImage = '<img src="images/darioptera.png" alt="choixpo">';
-                document.querySelector('.speech').innerHTML = ajoutImage;
+                let newImage = '<img src="images/darioptera.png" alt="choixpo">';
+                divChange.innerHTML = newImage;
             }
         } else {
-            document.querySelector('.speech').innerHTML = 'Mmmh... Dans quelle maison vais-je te mettre ?';
+            divChange.innerHTML = 'Ça ne fonctionne qu\'avec un nom, pardi !';
         }
-
-
     }
 }
 
