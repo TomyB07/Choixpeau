@@ -23,25 +23,36 @@ let app = {
         let divChange = document.querySelector('.speech');
 
         if (elementCourant != "") {
-            console.log(elementCourant);
-            let randomNumber = (Math.random());
-            console.log(randomNumber);
-            if (randomNumber < 0.25) {
+            let nameLength = elementCourant.length
+            console.log(nameLength)
+
+            if (elementCourant.length === 8) {
+                let ajoutImage = '<img src="images/maxopus.png" alt="choixpo">';
+                divChange.innerHTML = ajoutImage;
+            } 
+            
+            else if (elementCourant[0] === "L" || elementCourant[0] === "l") {
+                let ajoutImage = '<img src="images/lustrix.png" alt="choixpo">';
+                document.querySelector('.speech').innerHTML = ajoutImage;
+            } else if (elementCourant.charAt(elementCourant.length - 1) === "X" || elementCourant.charAt(elementCourant.length - 1) === "x") {
+                let ajoutImage = '<img src="images/lustrix.png" alt="choixpo">';
+                document.querySelector('.speech').innerHTML = ajoutImage;
+            } 
+            
+            else if (Number.isInteger(elementCourant.length / 5)) {
                 let ajoutImage = '<img src="images/anthorvus.png" alt="choixpo">';
                 document.querySelector('.speech').innerHTML = ajoutImage;
-            }
-            else if (randomNumber < 0.5) {
+            } else if (Number.isInteger(elementCourant.length / 3)) {
+                let ajoutImage = '<img src="images/anthorvus.png" alt="choixpo">';
+                document.querySelector('.speech').innerHTML = ajoutImage;
+            } 
+            
+            else {
                 let ajoutImage = '<img src="images/darioptera.png" alt="choixpo">';
                 document.querySelector('.speech').innerHTML = ajoutImage;
             }
-            else if (randomNumber < 0.75) {
-                let ajoutImage = '<img src="images/lustrix.png" alt="choixpo">';
-                document.querySelector('.speech').innerHTML = ajoutImage;
-            }else if (randomNumber < 1) {
-                let ajoutImage = '<img src="images/maxopus.png" alt="choixpo">';
-                document.querySelector('.speech').innerHTML = ajoutImage;
-            }
-
+        } else {
+            document.querySelector('.speech').innerHTML = 'Mmmh... Dans quelle maison vais-je te mettre ?';
         }
 
 
